@@ -233,7 +233,7 @@ field to control the Process Agent's features.
 ```yml
 datadog_config:
   process_agent_enabled: true
-datadog_config_ex:  
+datadog_config_ex:
   process.config:
     scrub_args: true
     custom_sensitive_words: "consul_token,dd_api_key"
