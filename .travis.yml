@@ -35,4 +35,4 @@ script:
   # downgrading to 5.23.0
   - sudo ansible-playbook -i travis_test/inventory/travis.ini "travis_test/downgrade_to_5_debian.yaml"
   - ps aux | grep -v grep | grep agent
-- sudo dd-agent info
+  - sudo dd-agent info
