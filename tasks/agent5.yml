@@ -33,6 +33,7 @@
     file_type: directory
   register: datadog_conf_directories
   when: datadog_disable_untracked_checks
+
 - name: Delete checks not present in datadog_tracked_checks
   file:
     path: "/etc/datadog-agent/conf.d/{{ item }}.yaml"
