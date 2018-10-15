@@ -2,7 +2,7 @@
 
 - hosts: all
   roles:
-    - { role: '/home/travis/build/DataDog/ansible-datadog/'}
+    - { role: '/home/travis/build/ehime/ansible-role-datadog/'}
   vars:
     datadog_api_key: "11111111111111111111111111111111"
     datadog_enabled: false
