@@ -7,6 +7,13 @@ datadog_config: {}
 # default checks enabled
 datadog_checks: {}
 
+# set this to `true` to delete untracked checks
+datadog_disable_untracked_checks: false
+# Add additional checks to keep when `datadog_disable_untracked_checks` is set to `true`
+datadog_additional_checks: []
+# default tracked checks
+datadog_tracked_checks: "{{ datadog_checks | list + datadog_additional_checks }}"
+
 # default user/group
 datadog_user: dd-agent
 datadog_group: root
@@ -57,4 +64,3 @@ datadog_agent5_zypper_repo: "https://yum.datadoghq.com/suse/rpm/{{ ansible_users
 
 ###           End of Beta-Agent6-only experimental attributes        ###
 ########################################################################
-
