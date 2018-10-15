@@ -1,3 +1,4 @@
+---
 - hosts: all
   roles:
     - { role: ansible-role-datadog, become: yes }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
