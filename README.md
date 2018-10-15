@@ -13,7 +13,7 @@ Installation
 ------------
 
 ```
-ansible-galaxy install Datadog.datadog
+ansible-galaxy install ehime.datadog
 ```
 
 Role Variables
@@ -136,7 +136,7 @@ Example Playbooks
 ```yml
 - hosts: servers
   roles:
-    - { role: Datadog.datadog, become: yes }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
+    - { role: ehime.datadog, become: yes }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
   vars:
     datadog_api_key: "123456"
     datadog_agent_version: "1:6.0.0-1" # for apt-based platforms, use a `6.0.0-1` format on yum-based platforms
@@ -197,7 +197,7 @@ Example Playbooks
 ```yml
 - hosts: servers
   roles:
-    - { role: Datadog.datadog, become: yes, datadog_api_key: "mykey" }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
+    - { role: ehime.datadog, become: yes, datadog_api_key: "mykey" }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
 ```
 
 
@@ -259,7 +259,7 @@ to the playbooks that make use of the present role:
         state: present
 
   roles:
-    - { role: Datadog.datadog, become: yes, datadog_api_key: "mykey" }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
+    - { role: ehime.datadog, become: yes, datadog_api_key: "mykey" }  # On Ansible < 1.9, use `sudo: yes` instead of `become: yes`
 ```
 
 License
