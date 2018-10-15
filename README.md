@@ -1,6 +1,6 @@
 Ansible Datadog Role
 ========
-[![Ansible Galaxy](http://img.shields.io/badge/galaxy-Datadog.datadog-660198.svg)](https://galaxy.ansible.com/ehime/datadog/)
+[![Ansible Galaxy](https://img.shields.io/badge/galaxy-ehime.datadog-660198.svg)](https://galaxy.ansible.com/ehime/datadog/)
 [![Build Status](https://travis-ci.org/ehime/ansible-role-datadog.svg?branch=master)](https://travis-ci.org/ehime/ansible-role-datadog)
 
 Install and configure Datadog base agent & checks. Starting with version `2` of
@@ -269,6 +269,8 @@ Apache2
 
 Author Information
 ------------------
+
+[Jd Daniel](mailto:jon.daniel@ge.com) --Forked from [Datadog](https://github.com/DataDog/ansible-datadog)
 
 brian@akins.org
 
