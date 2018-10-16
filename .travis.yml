@@ -26,16 +26,16 @@ script:
   - ansible-lint -v $(find tests -name *yml) -x ANSIBLE0006,ANSIBLE0010
 
   # testing dry run
-  - sudo ansible-playbook -i travis_test/inventory/travis.ini "travis_test/install_agent_${AGENT_VERSION}.yaml" --check
-  - sudo ansible-playbook -i travis_test/inventory/travis.ini "travis_test/downgrade_to_5_debian.yaml" --check
+  - sudo ansible-playbook -vvv -i travis_test/inventory/travis.ini "travis_test/install_agent_${AGENT_VERSION}.yaml" --check
+  - sudo ansible-playbook -vvv -i travis_test/inventory/travis.ini "travis_test/downgrade_to_5_debian.yaml" --check
 
   # installing latest version of ${AGENT_VERSION}
-  - sudo ansible-playbook -i travis_test/inventory/travis.ini "travis_test/install_agent_${AGENT_VERSION}.yaml"
+  - sudo ansible-playbook -vvv -i travis_test/inventory/travis.ini "travis_test/install_agent_${AGENT_VERSION}.yaml"
   - ps aux | grep -v grep | grep agent
   - sleep 3 # let the agent open the API port
   - if [ "${AGENT_VERSION}" = "6" ]; then sudo datadog-agent status; else sudo dd-agent info; fi
 
   # downgrading to 5.23.0
-  - sudo ansible-playbook -i travis_test/inventory/travis.ini "travis_test/downgrade_to_5_debian.yaml"
+  - sudo ansible-playbook -vvv -i travis_test/inventory/travis.ini "travis_test/downgrade_to_5_debian.yaml"
   - ps aux | grep -v grep | grep agent
   - sudo dd-agent info
