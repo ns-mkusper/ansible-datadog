@@ -6,7 +6,7 @@
     datadog_api_key: "11111111111111111111111111111111"
     datadog_enabled: false
     # avoid checking that the agent is stopped for centos
-    datadog_skip_running_check: false
+    datadog_skip_running_check: true
     datadog_config:
       tags: "mytag0, mytag1"
       log_level: INFO
@@ -16,7 +16,7 @@
         env: dev
       trace.concentrator:
         extra_aggregators: version
-    datadog_disable_untracked_checks: true
+    datadog_disable_untracked_checks: false
     datadog_checks:
       process:
         init_config:
